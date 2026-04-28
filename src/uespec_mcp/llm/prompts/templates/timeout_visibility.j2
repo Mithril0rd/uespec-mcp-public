@@ -1,0 +1,46 @@
+You are fixing a UISpec JSON file that timed out while waiting for widget visibility to change.
+
+## Failure
+- Timeout kind: {{ timeout_kind }}
+- Test step: {{ test_step }}
+- Failure message: {{ failure_message }}
+- Widget id: {{ widget_id }}
+- Expected visible: {{ expected_value }}
+- Actual result: {{ actual_value }}
+- Primary diagnosis: {{ primary_diagnosis }}
+
+## Wait step reference sites
+```json
+{{ wait_reference_sites }}
+```
+
+## Visibility context
+```json
+{{ visibility_context }}
+```
+
+## Test setup context
+### Parameters
+```json
+{{ parameter_context }}
+```
+
+### Arrange phase
+```json
+{{ arrange_context }}
+```
+
+## Relevant support surface
+```json
+{{ relevant_support_surface }}
+```
+
+## Your Task
+Generate a JSON Patch (RFC 6902) that fixes this specific TIMEOUT failure.
+
+Rules:
+1. Minimize the change. Do not rewrite the whole spec.
+2. Prefer fixing visibility bindings, converters, or missing widget logic before changing the test timeout.
+3. Prefer updating arrange/vmState only when the widget binding already looks correct.
+4. Edit the UISpec only. Do not invent `/waitSteps`, `/widgets`, `/vmState`, or other non-UESpec top-level roots.
+5. Output ONLY the JSON Patch array, no prose.

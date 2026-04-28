@@ -1,0 +1,7 @@
+﻿{
+    "caseId":  "widget_missing/case-02-add-tooltip-anchor",
+    "category":  "WIDGET_MISSING",
+    "targetFile":  "broken-spec.json",
+    "title":  "Add missing tooltip anchor widget"
+}
+

@@ -1,0 +1,36 @@
+You are fixing a UISpec JSON file that failed a text assertion.
+
+## Failure
+- Test step: {{ test_step }}
+- Failure message: {{ failure_message }}
+- Widget id: {{ widget_id }}
+- Expected text: {{ expected_value }}
+- Actual text: {{ actual_value }}
+
+## Widget definition
+```json
+{{ widget_definition }}
+```
+
+## Assertion reference sites
+```json
+{{ assertion_reference_sites }}
+```
+
+## ViewModel context
+```json
+{{ view_model_context }}
+```
+
+## Available converters
+```json
+{{ relevant_support_surface }}
+```
+
+## Your Task
+Generate a JSON Patch (RFC 6902) that fixes this specific text assertion failure.
+
+Rules:
+1. Minimize the change. Do not rewrite the whole spec.
+2. Prefer fixing bindings or converters before changing test expectations.
+3. Output ONLY the JSON Patch array, no prose.

@@ -1,0 +1,6 @@
+{
+  "caseId": "slate_event_not_handled/case-03-image-to-button",
+  "category": "SLATE_EVENT_NOT_HANDLED",
+  "targetFile": "broken-spec.json",
+  "title": "Fix pressed event binding for click"
+}

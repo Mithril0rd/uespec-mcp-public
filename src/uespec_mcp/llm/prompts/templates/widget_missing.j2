@@ -1,0 +1,46 @@
+You are fixing a UISpec JSON file whose test references widget ids that are missing from the compiled widget tree.
+
+## Failure
+- Missing widget ids: {{ missing_ids | join(", ") }}
+- Test step: {{ test_step }}
+- Failure message: {{ failure_message }}
+
+## Current reference sites
+```json
+{{ reference_sites }}
+```
+
+## Compiled widget tree (id + type only)
+```json
+{{ widget_tree_compact }}
+```
+
+## Valid widget types
+```json
+{{ widget_support_surface }}
+```
+
+## Heuristic guidance
+```json
+{{ typo_guidance }}
+```
+
+## Repair mode
+- Mode: {{ repair_mode }}
+
+## Suggested widget insertion plan
+```json
+{{ insertion_guidance }}
+```
+
+## Your Task
+Generate a JSON Patch (RFC 6902) that fixes this specific WIDGET_MISSING failure.
+
+Rules:
+1. Minimize the change. Do not rewrite the whole spec.
+2. If repair mode is `replace_reference`, only replace the bad test reference with the nearest existing widget id.
+3. If repair mode is `add_widget`, do not modify `/testSpec` paths. Add the missing widget to the UISpec widget tree instead.
+4. If there is no close existing id, prefer adding a widget with a valid widget type under the most plausible parent.
+5. Prefer the suggested widget type and insert pointer when using `add_widget`.
+6. If suggested widget insertion includes `suggestedContent`, include that field on the new widget.
+7. Output ONLY the JSON Patch array, no prose.

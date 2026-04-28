@@ -1,0 +1,16 @@
+{
+  "apiVersion": "0.2",
+  "kind": "HUD",
+  "name": "AssertionVisibilityHUD",
+  "root": {
+    "id": "rootPanel",
+    "type": "CanvasPanel",
+    "children": [
+      {
+        "id": "cooldownBadge",
+        "type": "Image",
+        "visibility": "Visible"
+      }
+    ]
+  }
+}

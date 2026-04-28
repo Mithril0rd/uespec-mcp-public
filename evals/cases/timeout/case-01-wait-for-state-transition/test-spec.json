@@ -1,0 +1,25 @@
+{
+  "apiVersion": "0.2",
+  "kind": "Test",
+  "name": "TimeoutStateTest",
+  "testSpec": {
+    "target": "TimeoutStateHUD",
+    "phases": {
+      "act": [
+        {
+          "step": "emit cooldown signal",
+          "emitSignal": "onSkillUsed"
+        }
+      ],
+      "assert": [
+        {
+          "step": "wait cooldown",
+          "waitForState": {
+            "state": "Cooldown",
+            "timeout": 1
+          }
+        }
+      ]
+    }
+  }
+}

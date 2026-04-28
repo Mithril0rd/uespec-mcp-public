@@ -1,0 +1,7 @@
+﻿{
+    "caseId":  "compile_error/case-03-unknown-signal",
+    "category":  "COMPILE_ERROR",
+    "targetFile":  "broken-spec.json",
+    "title":  "Unknown state transition signal"
+}
+

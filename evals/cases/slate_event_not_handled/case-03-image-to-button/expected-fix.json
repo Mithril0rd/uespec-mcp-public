@@ -1,0 +1,33 @@
+{
+  "apiVersion": "0.2",
+  "kind": "HUD",
+  "name": "SlateImageClickHUD",
+  "viewModel": {
+    "class": "VM_SkillBar",
+    "methods": [
+      {
+        "name": "UseSkill"
+      }
+    ]
+  },
+  "root": {
+    "id": "rootPanel",
+    "type": "CanvasPanel",
+    "children": [
+      {
+        "id": "slotQ",
+        "type": "Button",
+        "actions": [
+          {
+            "on": "Pressed",
+            "do": "vm.UseSkill(0)"
+          },
+          {
+            "on": "Clicked",
+            "do": "vm.UseSkill(0)"
+          }
+        ]
+      }
+    ]
+  }
+}

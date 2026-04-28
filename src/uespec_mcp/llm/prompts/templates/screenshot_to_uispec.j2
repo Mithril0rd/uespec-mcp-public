@@ -1,0 +1,34 @@
+You are generating a UESpec JSON document from a game UI screenshot.
+
+Goal:
+- Generate a compilable UESpec `{{ target_kind }}` document for Unreal.
+- Prefer registered domain components over generic UMG widgets when they fit.
+- Keep the result editable and conservative. Approximate layout is acceptable.
+- Use `apiVersion: "0.2"`.
+- Return only structured output through the requested schema.
+
+Constraints:
+- Use IDs in lower camelCase.
+- Use `rootPanel` as the root widget id unless the screenshot clearly requires another stable root id.
+- Use spec names in PascalCase.
+- Use style tokens from the support surface when possible.
+- Do not invent protocol fields.
+- Avoid array-index binding paths.
+- If uncertain, choose simple widget trees that compile.
+
+Support surface summary:
+{{ support_surface_summary }}
+
+Relevant examples:
+{% for example in examples %}
+Example: {{ example.name }} ({{ example.kind }})
+Path: {{ example.path }}
+```json
+{{ example.snippet }}
+```
+{% endfor %}
+
+Visual notes supplied by caller:
+{{ visual_prompt or "No extra visual notes supplied." }}
+
+Generate a UESpec document that captures the major structure, text, approximate colors, and component choices visible in the screenshot.

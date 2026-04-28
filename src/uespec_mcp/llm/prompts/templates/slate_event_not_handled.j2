@@ -1,0 +1,59 @@
+You are fixing a UISpec JSON file whose Slate event was not handled at runtime.
+
+## Failure
+- Test step: {{ test_step }}
+- Failure message: {{ failure_message }}
+- Widget id: {{ widget_id }}
+- Event name: {{ event_name }}
+- Primary diagnosis: {{ primary_diagnosis }}
+
+## Target widget
+- Widget pointer: {{ widget_pointer }}
+```json
+{{ widget_definition }}
+```
+
+## Widget actions
+```json
+{{ widget_actions }}
+```
+
+## Actions matching the failed event
+```json
+{{ matching_actions }}
+```
+
+## ViewModel methods
+```json
+{{ declared_vm_methods }}
+```
+
+## VM method guidance
+```json
+{{ method_guidance }}
+```
+
+## Missing signals
+```json
+{{ missing_signals }}
+```
+
+## Widget event support
+```json
+{{ widget_event_support }}
+```
+
+## Relevant support surface
+```json
+{{ relevant_support_surface }}
+```
+
+## Your Task
+Generate a JSON Patch (RFC 6902) that fixes this specific SLATE_EVENT_NOT_HANDLED failure.
+
+Rules:
+1. Minimize the change. Do not rewrite the whole spec.
+2. If an action references an undeclared VM method and there is a very close declared method, prefer fixing the action call.
+3. If the VM method name looks intentional and there is no close declared alternative, prefer adding the missing method declaration.
+4. If the widget type is not a plausible host for the failed event, prefer changing the widget to a compatible control instead of rewriting unrelated logic.
+5. Output ONLY the JSON Patch array, no prose.

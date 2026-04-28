@@ -1,0 +1,37 @@
+You are fixing a UISpec JSON file that failed a style or visibility assertion.
+
+## Failure
+- Test step: {{ test_step }}
+- Failure message: {{ failure_message }}
+- Widget id: {{ widget_id }}
+- Style property: {{ style_property }}
+- Expected value: {{ expected_value }}
+- Actual value: {{ actual_value }}
+
+## Widget definition
+```json
+{{ widget_definition }}
+```
+
+## Assertion reference sites
+```json
+{{ assertion_reference_sites }}
+```
+
+## State machine
+```json
+{{ state_machine_context }}
+```
+
+## Available style tokens
+```json
+{{ relevant_support_surface }}
+```
+
+## Your Task
+Generate a JSON Patch (RFC 6902) that fixes this specific style assertion failure.
+
+Rules:
+1. Minimize the change. Do not rewrite the whole spec.
+2. Prefer fixing bindings, stateBindings, or style tokens before changing the test.
+3. Output ONLY the JSON Patch array, no prose.

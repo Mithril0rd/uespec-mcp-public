@@ -1,0 +1,48 @@
+You are fixing a UISpec JSON file that timed out during automated testing.
+
+## Failure
+- Timeout kind: {{ timeout_kind }}
+- Test step: {{ test_step }}
+- Failure message: {{ failure_message }}
+- Expected value: {{ expected_value }}
+- Actual value: {{ actual_value }}
+- Primary diagnosis: {{ primary_diagnosis }}
+
+## Wait step reference sites
+```json
+{{ wait_reference_sites }}
+```
+
+## State context
+```json
+{{ state_context }}
+```
+
+## Visibility context
+```json
+{{ visibility_context }}
+```
+
+## Test setup context
+### Parameters
+```json
+{{ parameter_context }}
+```
+
+### Arrange phase
+```json
+{{ arrange_context }}
+```
+
+## Relevant support surface
+```json
+{{ relevant_support_surface }}
+```
+
+## Your Task
+Generate a JSON Patch (RFC 6902) that fixes this specific TIMEOUT failure.
+
+Rules:
+1. Minimize the change. Do not rewrite the whole spec.
+2. Prefer fixing the underlying state/binding/setup issue before changing timeout values.
+3. Output ONLY the JSON Patch array, no prose.

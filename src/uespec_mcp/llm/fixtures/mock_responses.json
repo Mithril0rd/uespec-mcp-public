@@ -1,0 +1,78 @@
+{
+  "UNKNOWN_CONVERTER": {
+    "content": "[{\"op\":\"replace\",\"path\":\"/root/children/0/visibility/convert\",\"value\":\"BoolToVisibility\"}]",
+    "parsed_output": [
+      {
+        "op": "replace",
+        "path": "/root/children/0/visibility/convert",
+        "value": "BoolToVisibility"
+      }
+    ],
+    "raw_response": {
+      "provider": "mock"
+    },
+    "input_tokens": 8,
+    "output_tokens": 4,
+    "model": "mock-llm"
+  },
+  "VM_METHOD_NOT_DECLARED": {
+    "content": "[{\"op\":\"replace\",\"path\":\"/root/children/0/actions/0/do\",\"value\":\"vm.UseSkill(0)\"}]",
+    "parsed_output": [
+      {
+        "op": "replace",
+        "path": "/root/children/0/actions/0/do",
+        "value": "vm.UseSkill(0)"
+      }
+    ],
+    "raw_response": {
+      "provider": "mock"
+    },
+    "input_tokens": 8,
+    "output_tokens": 4,
+    "model": "mock-llm"
+  },
+  "UNKNOWN_SIGNAL": {
+    "content": "[{\"op\":\"replace\",\"path\":\"/stateMachine/states/0/transitions/0/when\",\"value\":\"onSkillUsed\"}]",
+    "parsed_output": [
+      {
+        "op": "replace",
+        "path": "/stateMachine/states/0/transitions/0/when",
+        "value": "onSkillUsed"
+      }
+    ],
+    "raw_response": {
+      "provider": "mock"
+    },
+    "input_tokens": 8,
+    "output_tokens": 4,
+    "model": "mock-llm"
+  },
+  "UNKNOWN_WIDGET_TYPE": {
+    "content": "[{\"op\":\"replace\",\"path\":\"/root/children/0/type\",\"value\":\"Button\"}]",
+    "parsed_output": [
+      {
+        "op": "replace",
+        "path": "/root/children/0/type",
+        "value": "Button"
+      }
+    ],
+    "raw_response": {
+      "provider": "mock"
+    },
+    "input_tokens": 8,
+    "output_tokens": 4,
+    "model": "mock-llm"
+  },
+  "*": {
+    "content": "{\"status\":\"mock\"}",
+    "parsed_output": {
+      "status": "mock"
+    },
+    "raw_response": {
+      "provider": "mock"
+    },
+    "input_tokens": 1,
+    "output_tokens": 1,
+    "model": "mock-llm"
+  }
+}

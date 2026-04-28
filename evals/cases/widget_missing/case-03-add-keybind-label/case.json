@@ -1,0 +1,7 @@
+﻿{
+    "caseId":  "widget_missing/case-03-add-keybind-label",
+    "category":  "WIDGET_MISSING",
+    "targetFile":  "broken-spec.json",
+    "title":  "Add missing keybind label widget"
+}
+

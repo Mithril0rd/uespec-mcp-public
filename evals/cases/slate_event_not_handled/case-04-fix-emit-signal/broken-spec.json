@@ -1,0 +1,23 @@
+{
+  "apiVersion": "0.2",
+  "kind": "HUD",
+  "name": "SlateSignalHUD",
+  "root": {
+    "id": "rootPanel",
+    "type": "CanvasPanel",
+    "children": [
+      {
+        "id": "slotQ",
+        "type": "Button",
+        "actions": [
+          {
+            "on": "Unhovered",
+            "do": {
+              "emitSignal": "onSkillUsed"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

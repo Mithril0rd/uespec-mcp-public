@@ -1,0 +1,6 @@
+{
+  "caseId": "assertion_failed/case-04-visibility-binding",
+  "category": "ASSERTION_FAILED",
+  "targetFile": "broken-spec.json",
+  "title": "Fix hidden cooldown badge"
+}

@@ -1,0 +1,6 @@
+{
+  "caseId": "slate_event_not_handled/case-02-add-vm-method-decl",
+  "category": "SLATE_EVENT_NOT_HANDLED",
+  "targetFile": "broken-spec.json",
+  "title": "Fix released event binding for click"
+}

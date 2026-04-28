@@ -1,0 +1,25 @@
+{
+  "apiVersion": "0.2",
+  "kind": "Test",
+  "name": "SlateMissingMethodTest",
+  "testSpec": {
+    "target": "SlateMissingMethodHUD",
+    "phases": {
+      "act": [
+        {
+          "step": "click slot",
+          "click": "slotQ"
+        }
+      ],
+      "assert": [
+        {
+          "step": "slot remains visible",
+          "assertVisible": {
+            "id": "slotQ",
+            "expected": true
+          }
+        }
+      ]
+    }
+  }
+}

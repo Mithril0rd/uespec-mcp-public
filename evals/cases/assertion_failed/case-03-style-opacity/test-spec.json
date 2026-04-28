@@ -1,0 +1,21 @@
+﻿{
+    "testSpec":  {
+                     "target":  "AssertionStyleHUD",
+                     "phases":  {
+                                    "assert":  [
+                                                   {
+                                                       "assertStyle":  {
+                                                                           "expected":  0.6,
+                                                                           "property":  "opacity",
+                                                                           "id":  "slotQ"
+                                                                       },
+                                                       "step":  "dimmed"
+                                                   }
+                                               ]
+                                }
+                 },
+    "name":  "AssertionStyleTest",
+    "apiVersion":  "0.2",
+    "kind":  "Test"
+}
+

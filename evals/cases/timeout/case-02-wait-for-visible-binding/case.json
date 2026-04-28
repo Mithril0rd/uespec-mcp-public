@@ -1,0 +1,6 @@
+{
+  "caseId": "timeout/case-02-wait-for-visible-binding",
+  "category": "TIMEOUT",
+  "targetFile": "broken-spec.json",
+  "title": "Fix hidden aura badge"
+}

@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uespec-mcp"
+version = "0.1.0"
+description = "Minimal MCP server for UESpec"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [
+  { name = "UESpec contributors" }
+]
+dependencies = [
+  "anthropic>=0.39.0",
+  "mcp>=0.9.0",
+  "fastmcp>=2.0,<3.0",
+  "jinja2>=3.1.0",
+  "jsonpatch>=1.33",
+  "jsonschema>=4.0",
+  "openai>=1.0.0",
+  "pydantic>=2.0",
+]
+classifiers = [
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+
+[project.scripts]
+uespec-mcp = "uespec_mcp.server:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+uespec_mcp = ["schemas/*.json", "llm/prompts/templates/*.j2", "llm/fixtures/*.json"]

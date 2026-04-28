@@ -1,0 +1,1266 @@
+{
+  "provider": "claude",
+  "totalCases": 4,
+  "eligibleCases": 4,
+  "invalidFixtureCases": 0,
+  "fixedCases": 4,
+  "successRate": 100.0,
+  "avgAttempts": 1.0,
+  "inputTokens": 2406,
+  "outputTokens": 139,
+  "estimatedUsd": null,
+  "categorySummary": [
+    {
+      "category": "COMPILE_ERROR",
+      "total": 4,
+      "eligible": 4,
+      "invalidFixtures": 0,
+      "fixed": 4,
+      "rate": 100.0,
+      "avgAttempts": 1.0,
+      "estimatedUsd": null
+    }
+  ],
+  "cases": [
+    {
+      "caseId": "compile_error/case-01-unknown-converter",
+      "title": "Unknown visibility converter",
+      "category": "COMPILE_ERROR",
+      "status": "success",
+      "fixed": true,
+      "attemptCount": 1,
+      "historyDir": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-01-unknown-converter\\broken-spec\\20260427T162504Z",
+      "inputTokens": 463,
+      "outputTokens": 37,
+      "estimatedUsd": null,
+      "fixtureValid": true,
+      "fixtureStatus": "valid",
+      "fixture": {
+        "valid": true,
+        "status": "valid",
+        "issues": [],
+        "brokenSpec": {
+          "ok": false,
+          "compileOk": false,
+          "testOk": false,
+          "generatedAsset": null,
+          "failureMessage": "Converter 'BoolToVisiblity' is not registered."
+        },
+        "expectedFix": {
+          "ok": true,
+          "compileOk": true,
+          "testOk": true,
+          "generatedAsset": "/Game/UESpec/Generated/WBP_CompileUnknownConverterHUD",
+          "failureMessage": ""
+        }
+      },
+      "result": {
+        "ok": true,
+        "status": "success",
+        "specPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-01-unknown-converter-noa7ayks\\broken-spec.json",
+        "testSpecPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-01-unknown-converter-noa7ayks\\test-spec.json",
+        "attemptCount": 1,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "targetSpecPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-01-unknown-converter-noa7ayks\\broken-spec.json",
+            "failureCategory": "COMPILE_ERROR",
+            "failure": {
+              "category": "COMPILE_ERROR",
+              "specPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-01-unknown-converter-noa7ayks\\broken-spec.json",
+              "testStep": "$.root.children[0].visibility.convert",
+              "failureMessage": "Converter 'BoolToVisiblity' is not registered.",
+              "hint": "",
+              "nearestDeclared": [
+                "BoolToVisibility"
+              ],
+              "compilerErrorCode": "UNKNOWN_CONVERTER"
+            },
+            "proposal": {
+              "ok": true,
+              "handler": "compile_error",
+              "category": "COMPILE_ERROR",
+              "specPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-01-unknown-converter-noa7ayks\\broken-spec.json",
+              "patch": [
+                {
+                  "op": "replace",
+                  "path": "/root/children/0/visibility/convert",
+                  "value": "BoolToVisibility"
+                }
+              ],
+              "request": {
+                "system_prompt": "You are a UISpec autofix worker. Output valid RFC 6902 JSON Patch only.",
+                "user_prompt": "You are fixing a UISpec JSON file that failed validation.\n\n## Failure\n- Error Code: UNKNOWN_CONVERTER\n- Path: $.root.children[0].visibility.convert\n- Message: Converter 'BoolToVisiblity' is not registered.\n- Nearest valid alternatives: BoolToVisibility\n\n## Current Spec (the part that's wrong)\n```json\n\"BoolToVisiblity\"\n```\n\n## Support Surface (valid symbols)\n```json\n{\n  \"Converters\": [\n    {\n      \"Name\": \"BoolToVisibility\"\n    },\n    {\n      \"Name\": \"Percent\"\n    },\n    {\n      \"Name\": \"SecondsToCooldownText\"\n    }\n  ]\n}\n```\n\n## Your Task\nGenerate a JSON Patch (RFC 6902) that fixes this specific error.\n\nRules:\n1. Minimize the change. Do not rewrite the whole spec.\n2. Only use symbols from the Support Surface or nearest valid alternatives.\n3. Output ONLY the JSON Patch array, no prose.",
+                "images": [],
+                "expected_output_schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "op",
+                      "path"
+                    ],
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "enum": [
+                          "add",
+                          "remove",
+                          "replace",
+                          "move",
+                          "copy",
+                          "test"
+                        ]
+                      },
+                      "path": {
+                        "type": "string"
+                      },
+                      "from": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": [
+                          "string",
+                          "number",
+                          "integer",
+                          "boolean",
+                          "object",
+                          "array",
+                          "null"
+                        ]
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "max_tokens": 2000,
+                "temperature": 0.1
+              },
+              "llmResponse": {
+                "content": "",
+                "parsed_output": [
+                  {
+                    "op": "replace",
+                    "path": "/root/children/0/visibility/convert",
+                    "value": "BoolToVisibility"
+                  }
+                ],
+                "raw_response": {
+                  "id": "msg_13579c2ca3f04db3917608f95b98d974",
+                  "content": [
+                    {
+                      "id": "tooluse_yxLoRJ8Vv1LryR9iKglTUA",
+                      "input": {
+                        "result": [
+                          {
+                            "op": "replace",
+                            "path": "/root/children/0/visibility/convert",
+                            "value": "BoolToVisibility"
+                          }
+                        ]
+                      },
+                      "name": "uespec_structured_output",
+                      "type": "tool_use"
+                    }
+                  ],
+                  "model": "claude-sonnet-4.6",
+                  "role": "assistant",
+                  "stop_reason": "tool_use",
+                  "stop_sequence": null,
+                  "type": "message",
+                  "usage": {
+                    "cache_creation": {
+                      "ephemeral_1h_input_tokens": 0,
+                      "ephemeral_5m_input_tokens": 0
+                    },
+                    "cache_creation_input_tokens": 0,
+                    "cache_read_input_tokens": 0,
+                    "inference_geo": null,
+                    "input_tokens": 463,
+                    "output_tokens": 37,
+                    "server_tool_use": null,
+                    "service_tier": null
+                  }
+                },
+                "input_tokens": 463,
+                "output_tokens": 37,
+                "model": "claude-sonnet-4.6"
+              },
+              "context": {
+                "errorCode": "UNKNOWN_CONVERTER",
+                "errorPath": "$.root.children[0].visibility.convert",
+                "nearestDeclared": [
+                  "BoolToVisibility"
+                ],
+                "specSnippet": "BoolToVisiblity",
+                "supportSurface": {
+                  "Converters": [
+                    {
+                      "Name": "BoolToVisibility"
+                    },
+                    {
+                      "Name": "Percent"
+                    },
+                    {
+                      "Name": "SecondsToCooldownText"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "historyDir": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-01-unknown-converter\\broken-spec\\20260427T162504Z",
+        "finalFailureCount": 0,
+        "finalFailure": null,
+        "finalArtifacts": {
+          "validateResult": {
+            "ok": true,
+            "stage": "semantic",
+            "normalizedJson": "{\n  \"apiVersion\": \"0.2\",\n  \"kind\": \"HUD\",\n  \"name\": \"CompileUnknownConverterHUD\",\n  \"root\": {\n    \"children\": [\n      {\n        \"id\": \"auraBadge\",\n        \"type\": \"Image\",\n        \"visibility\": {\n          \"bind\": \"vm.isAuraVisible\",\n          \"convert\": \"BoolToVisibility\"\n        }\n      }\n    ],\n    \"id\": \"rootPanel\",\n    \"type\": \"CanvasPanel\"\n  }\n}",
+            "errors": [],
+            "semanticValidation": {
+              "status": "mock"
+            }
+          },
+          "compileResult": {
+            "ok": true,
+            "normalizedJson": "{\n  \"apiVersion\": \"0.2\",\n  \"kind\": \"HUD\",\n  \"name\": \"CompileUnknownConverterHUD\",\n  \"root\": {\n    \"children\": [\n      {\n        \"id\": \"auraBadge\",\n        \"type\": \"Image\",\n        \"visibility\": {\n          \"bind\": \"vm.isAuraVisible\",\n          \"convert\": \"BoolToVisibility\"\n        }\n      }\n    ],\n    \"id\": \"rootPanel\",\n    \"type\": \"CanvasPanel\"\n  }\n}",
+            "errors": [],
+            "generatedAssets": [
+              "/Game/UESpec/Generated/WBP_CompileUnknownConverterHUD"
+            ],
+            "rawResult": {
+              "ok": true,
+              "errors": [],
+              "generatedAssets": [
+                "/Game/UESpec/Generated/WBP_CompileUnknownConverterHUD"
+              ],
+              "bridgeMode": "mock"
+            },
+            "command": [
+              "mock"
+            ],
+            "outputPath": null,
+            "specPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-01-unknown-converter-noa7ayks\\broken-spec.json",
+            "outputDir": "/Game/UESpec/Generated"
+          },
+          "testResult": {
+            "ok": true,
+            "specPath": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-01-unknown-converter\\_runtime_reports\\test-spec.runtime.json",
+            "outputReport": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-01-unknown-converter\\_runtime_reports\\test-spec.junit.xml",
+            "failureReportPath": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-01-unknown-converter\\_runtime_reports\\test-spec.failure-report.json",
+            "summary": {
+              "total": 1,
+              "pass": 1,
+              "fail": 0,
+              "skip": 0
+            },
+            "errors": [],
+            "failureReport": {
+              "summary": {
+                "total": 1,
+                "pass": 1,
+                "fail": 0,
+                "skip": 0
+              },
+              "failures": []
+            },
+            "rawResult": {
+              "ok": true,
+              "summary": {
+                "total": 1,
+                "pass": 1,
+                "fail": 0,
+                "skip": 0
+              },
+              "errors": [],
+              "failureReport": {
+                "summary": {
+                  "total": 1,
+                  "pass": 1,
+                  "fail": 0,
+                  "skip": 0
+                },
+                "failures": []
+              }
+            },
+            "command": [
+              "mock"
+            ],
+            "outputPath": null
+          },
+          "runtimeTestSpecPath": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-01-unknown-converter\\_runtime_reports\\test-spec.runtime.json"
+        }
+      }
+    },
+    {
+      "caseId": "compile_error/case-02-vm-method-typo",
+      "title": "VM method typo in click action",
+      "category": "COMPILE_ERROR",
+      "status": "success",
+      "fixed": true,
+      "attemptCount": 1,
+      "historyDir": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-02-vm-method-typo\\broken-spec\\20260427T162508Z",
+      "inputTokens": 805,
+      "outputTokens": 36,
+      "estimatedUsd": null,
+      "fixtureValid": true,
+      "fixtureStatus": "valid",
+      "fixture": {
+        "valid": true,
+        "status": "valid",
+        "issues": [],
+        "brokenSpec": {
+          "ok": false,
+          "compileOk": false,
+          "testOk": false,
+          "generatedAsset": null,
+          "failureMessage": "ViewModel method 'UseSkil' is not declared."
+        },
+        "expectedFix": {
+          "ok": true,
+          "compileOk": true,
+          "testOk": true,
+          "generatedAsset": "/Game/UESpec/Generated/WBP_CompileVmTypoHUD",
+          "failureMessage": ""
+        }
+      },
+      "result": {
+        "ok": true,
+        "status": "success",
+        "specPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-02-vm-method-typo-r1ez_5o_\\broken-spec.json",
+        "testSpecPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-02-vm-method-typo-r1ez_5o_\\test-spec.json",
+        "attemptCount": 1,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "targetSpecPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-02-vm-method-typo-r1ez_5o_\\broken-spec.json",
+            "failureCategory": "COMPILE_ERROR",
+            "failure": {
+              "category": "COMPILE_ERROR",
+              "specPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-02-vm-method-typo-r1ez_5o_\\broken-spec.json",
+              "testStep": "$.root.children[0].actions[0].do",
+              "failureMessage": "ViewModel method 'UseSkil' is not declared.",
+              "hint": "",
+              "nearestDeclared": [
+                "UseSkill"
+              ],
+              "compilerErrorCode": "VM_METHOD_NOT_DECLARED"
+            },
+            "proposal": {
+              "ok": true,
+              "handler": "compile_error",
+              "category": "COMPILE_ERROR",
+              "specPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-02-vm-method-typo-r1ez_5o_\\broken-spec.json",
+              "patch": [
+                {
+                  "op": "replace",
+                  "path": "/root/children/0/actions/0/do",
+                  "value": "vm.UseSkill(0)"
+                }
+              ],
+              "request": {
+                "system_prompt": "You are a UISpec autofix worker. Output valid RFC 6902 JSON Patch only.",
+                "user_prompt": "You are fixing a UISpec JSON file that failed validation.\n\n## Failure\n- Error Code: VM_METHOD_NOT_DECLARED\n- Path: $.root.children[0].actions[0].do\n- Message: ViewModel method 'UseSkil' is not declared.\n- Nearest valid alternatives: UseSkill\n\n## Current Spec (the part that's wrong)\n```json\n\"vm.UseSkil(0)\"\n```\n\n## Support Surface (valid symbols)\n```json\n{\n  \"SupportSurfaceVersion\": \"mock\",\n  \"BuiltInUMGWidgets\": [\n    {\n      \"Type\": \"Border\"\n    },\n    {\n      \"Type\": \"Button\"\n    },\n    {\n      \"Type\": \"CanvasPanel\"\n    },\n    {\n      \"Type\": \"ChatLine\"\n    },\n    {\n      \"Type\": \"DamageNumber\"\n    },\n    {\n      \"Type\": \"EquipmentPanel\"\n    },\n    {\n      \"Type\": \"HealthBar\"\n    },\n    {\n      \"Type\": \"HorizontalBox\"\n    },\n    {\n      \"Type\": \"Image\"\n    },\n    {\n      \"Type\": \"ItemSlot\"\n    },\n    {\n      \"Type\": \"ItemTooltip\"\n    },\n    {\n      \"Type\": \"MinimapMarker\"\n    },\n    {\n      \"Type\": \"Overlay\"\n    },\n    {\n      \"Type\": \"PlayerNamePlate\"\n    },\n    {\n      \"Type\": \"ProgressBar\"\n    },\n    {\n      \"Type\": \"QuestEntry\"\n    },\n    {\n      \"Type\": \"ResourceBar\"\n    },\n    {\n      \"Type\": \"SizeBox\"\n    },\n    {\n      \"Type\": \"SkillSlot\"\n    },\n    {\n      \"Type\": \"StatusEffectIcon\"\n    },\n    {\n      \"Type\": \"TextBlock\"\n    },\n    {\n      \"Type\": \"VerticalBox\"\n    }\n  ],\n  \"CommonUIWidgets\": [],\n  \"RegisteredComponents\": [],\n  \"Converters\": [\n    {\n      \"Name\": \"BoolToVisibility\"\n    },\n    {\n      \"Name\": \"Percent\"\n    },\n    {\n      \"Name\": \"SecondsToCooldownText\"\n    }\n  ],\n  \"StyleTokens\": [],\n  \"Signals\": [\n    {\n      \"Name\": \"onCooldownStarted\"\n    },\n    {\n      \"Name\": \"onInventoryChanged\"\n    },\n    {\n      \"Name\": \"onQuestUpdated\"\n    },\n    {\n      \"Name\": \"onSkillUsed\"\n    }\n  ]\n}\n```\n\n## Your Task\nGenerate a JSON Patch (RFC 6902) that fixes this specific error.\n\nRules:\n1. Minimize the change. Do not rewrite the whole spec.\n2. Only use symbols from the Support Surface or nearest valid alternatives.\n3. Output ONLY the JSON Patch array, no prose.",
+                "images": [],
+                "expected_output_schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "op",
+                      "path"
+                    ],
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "enum": [
+                          "add",
+                          "remove",
+                          "replace",
+                          "move",
+                          "copy",
+                          "test"
+                        ]
+                      },
+                      "path": {
+                        "type": "string"
+                      },
+                      "from": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": [
+                          "string",
+                          "number",
+                          "integer",
+                          "boolean",
+                          "object",
+                          "array",
+                          "null"
+                        ]
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "max_tokens": 2000,
+                "temperature": 0.1
+              },
+              "llmResponse": {
+                "content": "",
+                "parsed_output": [
+                  {
+                    "op": "replace",
+                    "path": "/root/children/0/actions/0/do",
+                    "value": "vm.UseSkill(0)"
+                  }
+                ],
+                "raw_response": {
+                  "id": "msg_05fb02f55be344daa54c29e7ee0b7e08",
+                  "content": [
+                    {
+                      "id": "tooluse_zGikDhqqn2CPpqF6ZDhP7Q",
+                      "input": {
+                        "result": [
+                          {
+                            "op": "replace",
+                            "path": "$.root.children[0].actions[0].do",
+                            "value": "vm.UseSkill(0)"
+                          }
+                        ]
+                      },
+                      "name": "uespec_structured_output",
+                      "type": "tool_use"
+                    }
+                  ],
+                  "model": "claude-sonnet-4.6",
+                  "role": "assistant",
+                  "stop_reason": "tool_use",
+                  "stop_sequence": null,
+                  "type": "message",
+                  "usage": {
+                    "cache_creation": {
+                      "ephemeral_1h_input_tokens": 0,
+                      "ephemeral_5m_input_tokens": 0
+                    },
+                    "cache_creation_input_tokens": 0,
+                    "cache_read_input_tokens": 0,
+                    "inference_geo": null,
+                    "input_tokens": 805,
+                    "output_tokens": 36,
+                    "server_tool_use": null,
+                    "service_tier": null
+                  }
+                },
+                "input_tokens": 805,
+                "output_tokens": 36,
+                "model": "claude-sonnet-4.6"
+              },
+              "context": {
+                "errorCode": "VM_METHOD_NOT_DECLARED",
+                "errorPath": "$.root.children[0].actions[0].do",
+                "nearestDeclared": [
+                  "UseSkill"
+                ],
+                "specSnippet": "vm.UseSkil(0)",
+                "supportSurface": {
+                  "SupportSurfaceVersion": "mock",
+                  "BuiltInUMGWidgets": [
+                    {
+                      "Type": "Border"
+                    },
+                    {
+                      "Type": "Button"
+                    },
+                    {
+                      "Type": "CanvasPanel"
+                    },
+                    {
+                      "Type": "ChatLine"
+                    },
+                    {
+                      "Type": "DamageNumber"
+                    },
+                    {
+                      "Type": "EquipmentPanel"
+                    },
+                    {
+                      "Type": "HealthBar"
+                    },
+                    {
+                      "Type": "HorizontalBox"
+                    },
+                    {
+                      "Type": "Image"
+                    },
+                    {
+                      "Type": "ItemSlot"
+                    },
+                    {
+                      "Type": "ItemTooltip"
+                    },
+                    {
+                      "Type": "MinimapMarker"
+                    },
+                    {
+                      "Type": "Overlay"
+                    },
+                    {
+                      "Type": "PlayerNamePlate"
+                    },
+                    {
+                      "Type": "ProgressBar"
+                    },
+                    {
+                      "Type": "QuestEntry"
+                    },
+                    {
+                      "Type": "ResourceBar"
+                    },
+                    {
+                      "Type": "SizeBox"
+                    },
+                    {
+                      "Type": "SkillSlot"
+                    },
+                    {
+                      "Type": "StatusEffectIcon"
+                    },
+                    {
+                      "Type": "TextBlock"
+                    },
+                    {
+                      "Type": "VerticalBox"
+                    }
+                  ],
+                  "CommonUIWidgets": [],
+                  "RegisteredComponents": [],
+                  "Converters": [
+                    {
+                      "Name": "BoolToVisibility"
+                    },
+                    {
+                      "Name": "Percent"
+                    },
+                    {
+                      "Name": "SecondsToCooldownText"
+                    }
+                  ],
+                  "StyleTokens": [],
+                  "Signals": [
+                    {
+                      "Name": "onCooldownStarted"
+                    },
+                    {
+                      "Name": "onInventoryChanged"
+                    },
+                    {
+                      "Name": "onQuestUpdated"
+                    },
+                    {
+                      "Name": "onSkillUsed"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "historyDir": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-02-vm-method-typo\\broken-spec\\20260427T162508Z",
+        "finalFailureCount": 0,
+        "finalFailure": null,
+        "finalArtifacts": {
+          "validateResult": {
+            "ok": true,
+            "stage": "semantic",
+            "normalizedJson": "{\n  \"apiVersion\": \"0.2\",\n  \"kind\": \"HUD\",\n  \"name\": \"CompileVmTypoHUD\",\n  \"root\": {\n    \"children\": [\n      {\n        \"actions\": [\n          {\n            \"do\": \"vm.UseSkill(0)\",\n            \"on\": \"Clicked\"\n          }\n        ],\n        \"id\": \"slotQ\",\n        \"type\": \"Button\"\n      }\n    ],\n    \"id\": \"rootPanel\",\n    \"type\": \"CanvasPanel\"\n  },\n  \"viewModel\": {\n    \"class\": \"VM_SkillBar\",\n    \"methods\": [\n      {\n        \"name\": \"UseSkill\"\n      }\n    ]\n  }\n}",
+            "errors": [],
+            "semanticValidation": {
+              "status": "mock"
+            }
+          },
+          "compileResult": {
+            "ok": true,
+            "normalizedJson": "{\n  \"apiVersion\": \"0.2\",\n  \"kind\": \"HUD\",\n  \"name\": \"CompileVmTypoHUD\",\n  \"root\": {\n    \"children\": [\n      {\n        \"actions\": [\n          {\n            \"do\": \"vm.UseSkill(0)\",\n            \"on\": \"Clicked\"\n          }\n        ],\n        \"id\": \"slotQ\",\n        \"type\": \"Button\"\n      }\n    ],\n    \"id\": \"rootPanel\",\n    \"type\": \"CanvasPanel\"\n  },\n  \"viewModel\": {\n    \"class\": \"VM_SkillBar\",\n    \"methods\": [\n      {\n        \"name\": \"UseSkill\"\n      }\n    ]\n  }\n}",
+            "errors": [],
+            "generatedAssets": [
+              "/Game/UESpec/Generated/WBP_CompileVmTypoHUD"
+            ],
+            "rawResult": {
+              "ok": true,
+              "errors": [],
+              "generatedAssets": [
+                "/Game/UESpec/Generated/WBP_CompileVmTypoHUD"
+              ],
+              "bridgeMode": "mock"
+            },
+            "command": [
+              "mock"
+            ],
+            "outputPath": null,
+            "specPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-02-vm-method-typo-r1ez_5o_\\broken-spec.json",
+            "outputDir": "/Game/UESpec/Generated"
+          },
+          "testResult": {
+            "ok": true,
+            "specPath": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-02-vm-method-typo\\_runtime_reports\\test-spec.runtime.json",
+            "outputReport": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-02-vm-method-typo\\_runtime_reports\\test-spec.junit.xml",
+            "failureReportPath": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-02-vm-method-typo\\_runtime_reports\\test-spec.failure-report.json",
+            "summary": {
+              "total": 1,
+              "pass": 1,
+              "fail": 0,
+              "skip": 0
+            },
+            "errors": [],
+            "failureReport": {
+              "summary": {
+                "total": 1,
+                "pass": 1,
+                "fail": 0,
+                "skip": 0
+              },
+              "failures": []
+            },
+            "rawResult": {
+              "ok": true,
+              "summary": {
+                "total": 1,
+                "pass": 1,
+                "fail": 0,
+                "skip": 0
+              },
+              "errors": [],
+              "failureReport": {
+                "summary": {
+                  "total": 1,
+                  "pass": 1,
+                  "fail": 0,
+                  "skip": 0
+                },
+                "failures": []
+              }
+            },
+            "command": [
+              "mock"
+            ],
+            "outputPath": null
+          },
+          "runtimeTestSpecPath": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-02-vm-method-typo\\_runtime_reports\\test-spec.runtime.json"
+        }
+      }
+    },
+    {
+      "caseId": "compile_error/case-03-unknown-signal",
+      "title": "Unknown state transition signal",
+      "category": "COMPILE_ERROR",
+      "status": "success",
+      "fixed": true,
+      "attemptCount": 1,
+      "historyDir": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-03-unknown-signal\\broken-spec\\20260427T162510Z",
+      "inputTokens": 463,
+      "outputTokens": 38,
+      "estimatedUsd": null,
+      "fixtureValid": true,
+      "fixtureStatus": "valid",
+      "fixture": {
+        "valid": true,
+        "status": "valid",
+        "issues": [],
+        "brokenSpec": {
+          "ok": false,
+          "compileOk": false,
+          "testOk": false,
+          "generatedAsset": null,
+          "failureMessage": "Signal 'onSkillUseed' is not registered."
+        },
+        "expectedFix": {
+          "ok": true,
+          "compileOk": true,
+          "testOk": true,
+          "generatedAsset": "/Game/UESpec/Generated/WBP_CompileUnknownSignalHUD",
+          "failureMessage": ""
+        }
+      },
+      "result": {
+        "ok": true,
+        "status": "success",
+        "specPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-03-unknown-signal-xr1rz3uc\\broken-spec.json",
+        "testSpecPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-03-unknown-signal-xr1rz3uc\\test-spec.json",
+        "attemptCount": 1,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "targetSpecPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-03-unknown-signal-xr1rz3uc\\broken-spec.json",
+            "failureCategory": "COMPILE_ERROR",
+            "failure": {
+              "category": "COMPILE_ERROR",
+              "specPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-03-unknown-signal-xr1rz3uc\\broken-spec.json",
+              "testStep": "$.stateMachine.states[0].transitions[0].when",
+              "failureMessage": "Signal 'onSkillUseed' is not registered.",
+              "hint": "",
+              "nearestDeclared": [
+                "onSkillUsed"
+              ],
+              "compilerErrorCode": "UNKNOWN_SIGNAL"
+            },
+            "proposal": {
+              "ok": true,
+              "handler": "compile_error",
+              "category": "COMPILE_ERROR",
+              "specPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-03-unknown-signal-xr1rz3uc\\broken-spec.json",
+              "patch": [
+                {
+                  "op": "replace",
+                  "path": "/stateMachine/states/0/transitions/0/when",
+                  "value": "onSkillUsed"
+                }
+              ],
+              "request": {
+                "system_prompt": "You are a UISpec autofix worker. Output valid RFC 6902 JSON Patch only.",
+                "user_prompt": "You are fixing a UISpec JSON file that failed validation.\n\n## Failure\n- Error Code: UNKNOWN_SIGNAL\n- Path: $.stateMachine.states[0].transitions[0].when\n- Message: Signal 'onSkillUseed' is not registered.\n- Nearest valid alternatives: onSkillUsed\n\n## Current Spec (the part that's wrong)\n```json\n\"onSkillUseed\"\n```\n\n## Support Surface (valid symbols)\n```json\n{\n  \"Signals\": [\n    {\n      \"Name\": \"onCooldownStarted\"\n    },\n    {\n      \"Name\": \"onInventoryChanged\"\n    },\n    {\n      \"Name\": \"onQuestUpdated\"\n    },\n    {\n      \"Name\": \"onSkillUsed\"\n    }\n  ]\n}\n```\n\n## Your Task\nGenerate a JSON Patch (RFC 6902) that fixes this specific error.\n\nRules:\n1. Minimize the change. Do not rewrite the whole spec.\n2. Only use symbols from the Support Surface or nearest valid alternatives.\n3. Output ONLY the JSON Patch array, no prose.",
+                "images": [],
+                "expected_output_schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "op",
+                      "path"
+                    ],
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "enum": [
+                          "add",
+                          "remove",
+                          "replace",
+                          "move",
+                          "copy",
+                          "test"
+                        ]
+                      },
+                      "path": {
+                        "type": "string"
+                      },
+                      "from": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": [
+                          "string",
+                          "number",
+                          "integer",
+                          "boolean",
+                          "object",
+                          "array",
+                          "null"
+                        ]
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "max_tokens": 2000,
+                "temperature": 0.1
+              },
+              "llmResponse": {
+                "content": "",
+                "parsed_output": [
+                  {
+                    "op": "replace",
+                    "path": "/stateMachine/states/0/transitions/0/when",
+                    "value": "onSkillUsed"
+                  }
+                ],
+                "raw_response": {
+                  "id": "msg_aaef79ab49204c5b8e46820848ddcc93",
+                  "content": [
+                    {
+                      "id": "tooluse_QxFH1bC2Rf6Oopua9CLUR0",
+                      "input": {
+                        "result": [
+                          {
+                            "op": "replace",
+                            "path": "/stateMachine/states/0/transitions/0/when",
+                            "value": "onSkillUsed"
+                          }
+                        ]
+                      },
+                      "name": "uespec_structured_output",
+                      "type": "tool_use"
+                    }
+                  ],
+                  "model": "claude-sonnet-4.6",
+                  "role": "assistant",
+                  "stop_reason": "tool_use",
+                  "stop_sequence": null,
+                  "type": "message",
+                  "usage": {
+                    "cache_creation": {
+                      "ephemeral_1h_input_tokens": 0,
+                      "ephemeral_5m_input_tokens": 0
+                    },
+                    "cache_creation_input_tokens": 0,
+                    "cache_read_input_tokens": 0,
+                    "inference_geo": null,
+                    "input_tokens": 463,
+                    "output_tokens": 38,
+                    "server_tool_use": null,
+                    "service_tier": null
+                  }
+                },
+                "input_tokens": 463,
+                "output_tokens": 38,
+                "model": "claude-sonnet-4.6"
+              },
+              "context": {
+                "errorCode": "UNKNOWN_SIGNAL",
+                "errorPath": "$.stateMachine.states[0].transitions[0].when",
+                "nearestDeclared": [
+                  "onSkillUsed"
+                ],
+                "specSnippet": "onSkillUseed",
+                "supportSurface": {
+                  "Signals": [
+                    {
+                      "Name": "onCooldownStarted"
+                    },
+                    {
+                      "Name": "onInventoryChanged"
+                    },
+                    {
+                      "Name": "onQuestUpdated"
+                    },
+                    {
+                      "Name": "onSkillUsed"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "historyDir": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-03-unknown-signal\\broken-spec\\20260427T162510Z",
+        "finalFailureCount": 0,
+        "finalFailure": null,
+        "finalArtifacts": {
+          "validateResult": {
+            "ok": true,
+            "stage": "semantic",
+            "normalizedJson": "{\n  \"apiVersion\": \"0.2\",\n  \"kind\": \"HUD\",\n  \"name\": \"CompileUnknownSignalHUD\",\n  \"root\": {\n    \"id\": \"rootPanel\",\n    \"type\": \"CanvasPanel\"\n  },\n  \"stateMachine\": {\n    \"initial\": \"Normal\",\n    \"states\": [\n      {\n        \"name\": \"Normal\",\n        \"transitions\": [\n          {\n            \"to\": \"Cooldown\",\n            \"when\": \"onSkillUsed\"\n          }\n        ]\n      },\n      {\n        \"name\": \"Cooldown\"\n      }\n    ]\n  }\n}",
+            "errors": [],
+            "semanticValidation": {
+              "status": "mock"
+            }
+          },
+          "compileResult": {
+            "ok": true,
+            "normalizedJson": "{\n  \"apiVersion\": \"0.2\",\n  \"kind\": \"HUD\",\n  \"name\": \"CompileUnknownSignalHUD\",\n  \"root\": {\n    \"id\": \"rootPanel\",\n    \"type\": \"CanvasPanel\"\n  },\n  \"stateMachine\": {\n    \"initial\": \"Normal\",\n    \"states\": [\n      {\n        \"name\": \"Normal\",\n        \"transitions\": [\n          {\n            \"to\": \"Cooldown\",\n            \"when\": \"onSkillUsed\"\n          }\n        ]\n      },\n      {\n        \"name\": \"Cooldown\"\n      }\n    ]\n  }\n}",
+            "errors": [],
+            "generatedAssets": [
+              "/Game/UESpec/Generated/WBP_CompileUnknownSignalHUD"
+            ],
+            "rawResult": {
+              "ok": true,
+              "errors": [],
+              "generatedAssets": [
+                "/Game/UESpec/Generated/WBP_CompileUnknownSignalHUD"
+              ],
+              "bridgeMode": "mock"
+            },
+            "command": [
+              "mock"
+            ],
+            "outputPath": null,
+            "specPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-03-unknown-signal-xr1rz3uc\\broken-spec.json",
+            "outputDir": "/Game/UESpec/Generated"
+          },
+          "testResult": {
+            "ok": true,
+            "specPath": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-03-unknown-signal\\_runtime_reports\\test-spec.runtime.json",
+            "outputReport": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-03-unknown-signal\\_runtime_reports\\test-spec.junit.xml",
+            "failureReportPath": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-03-unknown-signal\\_runtime_reports\\test-spec.failure-report.json",
+            "summary": {
+              "total": 1,
+              "pass": 1,
+              "fail": 0,
+              "skip": 0
+            },
+            "errors": [],
+            "failureReport": {
+              "summary": {
+                "total": 1,
+                "pass": 1,
+                "fail": 0,
+                "skip": 0
+              },
+              "failures": []
+            },
+            "rawResult": {
+              "ok": true,
+              "summary": {
+                "total": 1,
+                "pass": 1,
+                "fail": 0,
+                "skip": 0
+              },
+              "errors": [],
+              "failureReport": {
+                "summary": {
+                  "total": 1,
+                  "pass": 1,
+                  "fail": 0,
+                  "skip": 0
+                },
+                "failures": []
+              }
+            },
+            "command": [
+              "mock"
+            ],
+            "outputPath": null
+          },
+          "runtimeTestSpecPath": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-03-unknown-signal\\_runtime_reports\\test-spec.runtime.json"
+        }
+      }
+    },
+    {
+      "caseId": "compile_error/case-04-unknown-widget-type",
+      "title": "Unknown widget type typo",
+      "category": "COMPILE_ERROR",
+      "status": "success",
+      "fixed": true,
+      "attemptCount": 1,
+      "historyDir": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-04-unknown-widget-type\\broken-spec\\20260427T162514Z",
+      "inputTokens": 675,
+      "outputTokens": 28,
+      "estimatedUsd": null,
+      "fixtureValid": true,
+      "fixtureStatus": "valid",
+      "fixture": {
+        "valid": true,
+        "status": "valid",
+        "issues": [],
+        "brokenSpec": {
+          "ok": false,
+          "compileOk": false,
+          "testOk": false,
+          "generatedAsset": null,
+          "failureMessage": "Widget type 'Bttton' is not registered."
+        },
+        "expectedFix": {
+          "ok": true,
+          "compileOk": true,
+          "testOk": true,
+          "generatedAsset": "/Game/UESpec/Generated/WBP_CompileUnknownWidgetHUD",
+          "failureMessage": ""
+        }
+      },
+      "result": {
+        "ok": true,
+        "status": "success",
+        "specPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-04-unknown-widget-type-h6c1_iow\\broken-spec.json",
+        "testSpecPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-04-unknown-widget-type-h6c1_iow\\test-spec.json",
+        "attemptCount": 1,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "targetSpecPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-04-unknown-widget-type-h6c1_iow\\broken-spec.json",
+            "failureCategory": "COMPILE_ERROR",
+            "failure": {
+              "category": "COMPILE_ERROR",
+              "specPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-04-unknown-widget-type-h6c1_iow\\broken-spec.json",
+              "testStep": "$.root.children[0].type",
+              "failureMessage": "Widget type 'Bttton' is not registered.",
+              "hint": "",
+              "nearestDeclared": [
+                "Button"
+              ],
+              "compilerErrorCode": "UNKNOWN_WIDGET_TYPE"
+            },
+            "proposal": {
+              "ok": true,
+              "handler": "compile_error",
+              "category": "COMPILE_ERROR",
+              "specPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-04-unknown-widget-type-h6c1_iow\\broken-spec.json",
+              "patch": [
+                {
+                  "op": "replace",
+                  "path": "/root/children/0/type",
+                  "value": "Button"
+                }
+              ],
+              "request": {
+                "system_prompt": "You are a UISpec autofix worker. Output valid RFC 6902 JSON Patch only.",
+                "user_prompt": "You are fixing a UISpec JSON file that failed validation.\n\n## Failure\n- Error Code: UNKNOWN_WIDGET_TYPE\n- Path: $.root.children[0].type\n- Message: Widget type 'Bttton' is not registered.\n- Nearest valid alternatives: Button\n\n## Current Spec (the part that's wrong)\n```json\n\"Bttton\"\n```\n\n## Support Surface (valid symbols)\n```json\n{\n  \"BuiltInUMGWidgets\": [\n    {\n      \"Type\": \"Border\"\n    },\n    {\n      \"Type\": \"Button\"\n    },\n    {\n      \"Type\": \"CanvasPanel\"\n    },\n    {\n      \"Type\": \"ChatLine\"\n    },\n    {\n      \"Type\": \"DamageNumber\"\n    },\n    {\n      \"Type\": \"EquipmentPanel\"\n    },\n    {\n      \"Type\": \"HealthBar\"\n    },\n    {\n      \"Type\": \"HorizontalBox\"\n    },\n    {\n      \"Type\": \"Image\"\n    },\n    {\n      \"Type\": \"ItemSlot\"\n    },\n    {\n      \"Type\": \"ItemTooltip\"\n    },\n    {\n      \"Type\": \"MinimapMarker\"\n    },\n    {\n      \"Type\": \"Overlay\"\n    },\n    {\n      \"Type\": \"PlayerNamePlate\"\n    },\n    {\n      \"Type\": \"ProgressBar\"\n    },\n    {\n      \"Type\": \"QuestEntry\"\n    },\n    {\n      \"Type\": \"ResourceBar\"\n    },\n    {\n      \"Type\": \"SizeBox\"\n    },\n    {\n      \"Type\": \"SkillSlot\"\n    },\n    {\n      \"Type\": \"StatusEffectIcon\"\n    },\n    {\n      \"Type\": \"TextBlock\"\n    },\n    {\n      \"Type\": \"VerticalBox\"\n    }\n  ],\n  \"CommonUIWidgets\": [],\n  \"RegisteredComponents\": []\n}\n```\n\n## Your Task\nGenerate a JSON Patch (RFC 6902) that fixes this specific error.\n\nRules:\n1. Minimize the change. Do not rewrite the whole spec.\n2. Only use symbols from the Support Surface or nearest valid alternatives.\n3. Output ONLY the JSON Patch array, no prose.",
+                "images": [],
+                "expected_output_schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "op",
+                      "path"
+                    ],
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "enum": [
+                          "add",
+                          "remove",
+                          "replace",
+                          "move",
+                          "copy",
+                          "test"
+                        ]
+                      },
+                      "path": {
+                        "type": "string"
+                      },
+                      "from": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": [
+                          "string",
+                          "number",
+                          "integer",
+                          "boolean",
+                          "object",
+                          "array",
+                          "null"
+                        ]
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "max_tokens": 2000,
+                "temperature": 0.1
+              },
+              "llmResponse": {
+                "content": "",
+                "parsed_output": [
+                  {
+                    "op": "replace",
+                    "path": "/root/children/0/type",
+                    "value": "Button"
+                  }
+                ],
+                "raw_response": {
+                  "id": "msg_586a4d27ea604f16930952fb56b8ffda",
+                  "content": [
+                    {
+                      "id": "tooluse_23NCQGUm6Lai5LBgE3Mbc2",
+                      "input": {
+                        "result": [
+                          {
+                            "op": "replace",
+                            "path": "/root/children/0/type",
+                            "value": "Button"
+                          }
+                        ]
+                      },
+                      "name": "uespec_structured_output",
+                      "type": "tool_use"
+                    }
+                  ],
+                  "model": "claude-sonnet-4.6",
+                  "role": "assistant",
+                  "stop_reason": "tool_use",
+                  "stop_sequence": null,
+                  "type": "message",
+                  "usage": {
+                    "cache_creation": {
+                      "ephemeral_1h_input_tokens": 0,
+                      "ephemeral_5m_input_tokens": 0
+                    },
+                    "cache_creation_input_tokens": 0,
+                    "cache_read_input_tokens": 0,
+                    "inference_geo": null,
+                    "input_tokens": 675,
+                    "output_tokens": 28,
+                    "server_tool_use": null,
+                    "service_tier": null
+                  }
+                },
+                "input_tokens": 675,
+                "output_tokens": 28,
+                "model": "claude-sonnet-4.6"
+              },
+              "context": {
+                "errorCode": "UNKNOWN_WIDGET_TYPE",
+                "errorPath": "$.root.children[0].type",
+                "nearestDeclared": [
+                  "Button"
+                ],
+                "specSnippet": "Bttton",
+                "supportSurface": {
+                  "BuiltInUMGWidgets": [
+                    {
+                      "Type": "Border"
+                    },
+                    {
+                      "Type": "Button"
+                    },
+                    {
+                      "Type": "CanvasPanel"
+                    },
+                    {
+                      "Type": "ChatLine"
+                    },
+                    {
+                      "Type": "DamageNumber"
+                    },
+                    {
+                      "Type": "EquipmentPanel"
+                    },
+                    {
+                      "Type": "HealthBar"
+                    },
+                    {
+                      "Type": "HorizontalBox"
+                    },
+                    {
+                      "Type": "Image"
+                    },
+                    {
+                      "Type": "ItemSlot"
+                    },
+                    {
+                      "Type": "ItemTooltip"
+                    },
+                    {
+                      "Type": "MinimapMarker"
+                    },
+                    {
+                      "Type": "Overlay"
+                    },
+                    {
+                      "Type": "PlayerNamePlate"
+                    },
+                    {
+                      "Type": "ProgressBar"
+                    },
+                    {
+                      "Type": "QuestEntry"
+                    },
+                    {
+                      "Type": "ResourceBar"
+                    },
+                    {
+                      "Type": "SizeBox"
+                    },
+                    {
+                      "Type": "SkillSlot"
+                    },
+                    {
+                      "Type": "StatusEffectIcon"
+                    },
+                    {
+                      "Type": "TextBlock"
+                    },
+                    {
+                      "Type": "VerticalBox"
+                    }
+                  ],
+                  "CommonUIWidgets": [],
+                  "RegisteredComponents": []
+                }
+              }
+            }
+          }
+        ],
+        "historyDir": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-04-unknown-widget-type\\broken-spec\\20260427T162514Z",
+        "finalFailureCount": 0,
+        "finalFailure": null,
+        "finalArtifacts": {
+          "validateResult": {
+            "ok": true,
+            "stage": "semantic",
+            "normalizedJson": "{\n  \"apiVersion\": \"0.2\",\n  \"kind\": \"HUD\",\n  \"name\": \"CompileUnknownWidgetHUD\",\n  \"root\": {\n    \"children\": [\n      {\n        \"id\": \"slotQ\",\n        \"type\": \"Button\"\n      }\n    ],\n    \"id\": \"rootPanel\",\n    \"type\": \"CanvasPanel\"\n  }\n}",
+            "errors": [],
+            "semanticValidation": {
+              "status": "mock"
+            }
+          },
+          "compileResult": {
+            "ok": true,
+            "normalizedJson": "{\n  \"apiVersion\": \"0.2\",\n  \"kind\": \"HUD\",\n  \"name\": \"CompileUnknownWidgetHUD\",\n  \"root\": {\n    \"children\": [\n      {\n        \"id\": \"slotQ\",\n        \"type\": \"Button\"\n      }\n    ],\n    \"id\": \"rootPanel\",\n    \"type\": \"CanvasPanel\"\n  }\n}",
+            "errors": [],
+            "generatedAssets": [
+              "/Game/UESpec/Generated/WBP_CompileUnknownWidgetHUD"
+            ],
+            "rawResult": {
+              "ok": true,
+              "errors": [],
+              "generatedAssets": [
+                "/Game/UESpec/Generated/WBP_CompileUnknownWidgetHUD"
+              ],
+              "bridgeMode": "mock"
+            },
+            "command": [
+              "mock"
+            ],
+            "outputPath": null,
+            "specPath": "<HOME>\\AppData\\Local\\Temp\\uespec-eval-compile_error-case-04-unknown-widget-type-h6c1_iow\\broken-spec.json",
+            "outputDir": "/Game/UESpec/Generated"
+          },
+          "testResult": {
+            "ok": true,
+            "specPath": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-04-unknown-widget-type\\_runtime_reports\\test-spec.runtime.json",
+            "outputReport": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-04-unknown-widget-type\\_runtime_reports\\test-spec.junit.xml",
+            "failureReportPath": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-04-unknown-widget-type\\_runtime_reports\\test-spec.failure-report.json",
+            "summary": {
+              "total": 1,
+              "pass": 1,
+              "fail": 0,
+              "skip": 0
+            },
+            "errors": [],
+            "failureReport": {
+              "summary": {
+                "total": 1,
+                "pass": 1,
+                "fail": 0,
+                "skip": 0
+              },
+              "failures": []
+            },
+            "rawResult": {
+              "ok": true,
+              "summary": {
+                "total": 1,
+                "pass": 1,
+                "fail": 0,
+                "skip": 0
+              },
+              "errors": [],
+              "failureReport": {
+                "summary": {
+                  "total": 1,
+                  "pass": 1,
+                  "fail": 0,
+                  "skip": 0
+                },
+                "failures": []
+              }
+            },
+            "command": [
+              "mock"
+            ],
+            "outputPath": null
+          },
+          "runtimeTestSpecPath": "<HOME>\\projects\\uespec-mcp\\Saved\\UESpec\\Evals\\PatchHistory\\compile_error\\case-04-unknown-widget-type\\_runtime_reports\\test-spec.runtime.json"
+        }
+      }
+    }
+  ]
+}

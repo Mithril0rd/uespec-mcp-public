@@ -1,0 +1,24 @@
+{
+  "apiVersion": "0.2",
+  "kind": "Test",
+  "name": "AssertionStateTest",
+  "testSpec": {
+    "target": "AssertionStateHUD",
+    "phases": {
+      "act": [
+        {
+          "step": "emit cooldown signal",
+          "emitSignal": "onSkillUsed"
+        }
+      ],
+      "assert": [
+        {
+          "step": "cooldown state",
+          "assertState": {
+            "expected": "Cooldown"
+          }
+        }
+      ]
+    }
+  }
+}

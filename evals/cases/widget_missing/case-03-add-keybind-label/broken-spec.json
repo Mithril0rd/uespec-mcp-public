@@ -1,0 +1,16 @@
+﻿{
+    "root":  {
+                 "id":  "rootPanel",
+                 "type":  "CanvasPanel",
+                 "children":  [
+                                  {
+                                      "id":  "slotQ",
+                                      "type":  "Button"
+                                  }
+                              ]
+             },
+    "name":  "WidgetMissingKeybindHUD",
+    "apiVersion":  "0.2",
+    "kind":  "HUD"
+}
+

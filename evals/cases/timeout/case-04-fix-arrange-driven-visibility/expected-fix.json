@@ -1,0 +1,16 @@
+{
+  "apiVersion": "0.2",
+  "kind": "HUD",
+  "name": "TimeoutArrangeHUD",
+  "root": {
+    "id": "rootPanel",
+    "type": "CanvasPanel",
+    "children": [
+      {
+        "id": "readyBadge",
+        "type": "Image",
+        "visibility": "Visible"
+      }
+    ]
+  }
+}

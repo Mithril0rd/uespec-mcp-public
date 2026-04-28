@@ -1,0 +1,30 @@
+You are fixing a UISpec JSON file that failed validation.
+
+## Failure
+- Error Code: {{ error_code }}
+- Path: {{ error_path }}
+- Message: {{ error_message }}
+{% if error_hint %}
+- Hint: {{ error_hint }}
+{% endif %}
+{% if nearest_declared %}
+- Nearest valid alternatives: {{ nearest_declared | join(", ") }}
+{% endif %}
+
+## Current Spec (the part that's wrong)
+```json
+{{ spec_snippet_around_path }}
+```
+
+## Support Surface (valid symbols)
+```json
+{{ support_surface_relevant_section }}
+```
+
+## Your Task
+Generate a JSON Patch (RFC 6902) that fixes this specific error.
+
+Rules:
+1. Minimize the change. Do not rewrite the whole spec.
+2. Only use symbols from the Support Surface or nearest valid alternatives.
+3. Output ONLY the JSON Patch array, no prose.

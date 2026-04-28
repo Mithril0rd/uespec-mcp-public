@@ -1,0 +1,29 @@
+{
+  "apiVersion": "0.2",
+  "kind": "HUD",
+  "name": "SlateVmTypoHUD",
+  "viewModel": {
+    "class": "VM_SkillBar",
+    "methods": [
+      {
+        "name": "UseSkill"
+      }
+    ]
+  },
+  "root": {
+    "id": "rootPanel",
+    "type": "CanvasPanel",
+    "children": [
+      {
+        "id": "slotQ",
+        "type": "Button",
+        "actions": [
+          {
+            "on": "Hovered",
+            "do": "vm.UseSkill(0)"
+          }
+        ]
+      }
+    ]
+  }
+}

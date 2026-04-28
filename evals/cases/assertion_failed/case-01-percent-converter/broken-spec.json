@@ -1,0 +1,16 @@
+{
+  "apiVersion": "0.2",
+  "kind": "HUD",
+  "name": "AssertionPercentHUD",
+  "root": {
+    "id": "rootPanel",
+    "type": "CanvasPanel",
+    "children": [
+      {
+        "id": "cooldownLabel",
+        "type": "TextBlock",
+        "content": "0%"
+      }
+    ]
+  }
+}

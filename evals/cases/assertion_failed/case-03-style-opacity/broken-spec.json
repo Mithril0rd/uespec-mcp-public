@@ -1,0 +1,31 @@
+{
+  "apiVersion": "0.2",
+  "kind": "HUD",
+  "name": "AssertionStyleHUD",
+  "stateMachine": {
+    "initial": "Cooldown",
+    "states": [
+      {
+        "name": "Normal"
+      },
+      {
+        "name": "Cooldown"
+      }
+    ]
+  },
+  "root": {
+    "id": "rootPanel",
+    "type": "CanvasPanel",
+    "children": [
+      {
+        "id": "slotQ",
+        "type": "Button",
+        "stateBindings": {
+          "Cooldown": {
+            "opacity": 1.0
+          }
+        }
+      }
+    ]
+  }
+}

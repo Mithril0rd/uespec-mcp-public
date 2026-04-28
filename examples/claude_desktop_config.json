@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "uespec": {
+      "command": "uespec-mcp",
+      "env": {
+        "UESPEC_UPROJECT_PATH": "E:\\path\\to\\YourGame.uproject",
+        "UESPEC_MCP_MODE": "commandlet"
+      }
+    }
+  }
+}

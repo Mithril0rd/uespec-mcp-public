@@ -1,0 +1,25 @@
+{
+  "apiVersion": "0.2",
+  "kind": "Test",
+  "name": "SlateImageClickTest",
+  "testSpec": {
+    "target": "SlateImageClickHUD",
+    "phases": {
+      "act": [
+        {
+          "step": "click slot",
+          "click": "slotQ"
+        }
+      ],
+      "assert": [
+        {
+          "step": "slot remains visible",
+          "assertVisible": {
+            "id": "slotQ",
+            "expected": true
+          }
+        }
+      ]
+    }
+  }
+}

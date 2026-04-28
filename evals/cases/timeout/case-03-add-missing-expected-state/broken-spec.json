@@ -1,0 +1,23 @@
+{
+  "apiVersion": "0.2",
+  "kind": "HUD",
+  "name": "TimeoutMissingStateHUD",
+  "stateMachine": {
+    "initial": "Normal",
+    "states": [
+      {
+        "name": "Normal",
+        "transitions": [
+          {
+            "to": "Cooldown",
+            "when": "onSkillUsed"
+          }
+        ]
+      }
+    ]
+  },
+  "root": {
+    "id": "rootPanel",
+    "type": "CanvasPanel"
+  }
+}

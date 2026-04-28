@@ -1,0 +1,6 @@
+{
+  "caseId": "slate_event_not_handled/case-01-vm-method-typo",
+  "category": "SLATE_EVENT_NOT_HANDLED",
+  "targetFile": "broken-spec.json",
+  "title": "Fix hovered event binding for click"
+}

@@ -1,0 +1,16 @@
+{
+  "apiVersion": "0.2",
+  "kind": "HUD",
+  "name": "TimeoutVisibilityHUD",
+  "root": {
+    "id": "rootPanel",
+    "type": "CanvasPanel",
+    "children": [
+      {
+        "id": "auraBadge",
+        "type": "Image",
+        "visibility": "Visible"
+      }
+    ]
+  }
+}

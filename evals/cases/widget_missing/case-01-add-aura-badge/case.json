@@ -1,0 +1,7 @@
+﻿{
+    "caseId":  "widget_missing/case-01-add-aura-badge",
+    "category":  "WIDGET_MISSING",
+    "targetFile":  "broken-spec.json",
+    "title":  "Add missing aura badge widget"
+}
+

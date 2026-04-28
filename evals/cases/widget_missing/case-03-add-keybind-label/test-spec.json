@@ -1,0 +1,20 @@
+﻿{
+    "testSpec":  {
+                     "target":  "WidgetMissingKeybindHUD",
+                     "phases":  {
+                                    "assert":  [
+                                                   {
+                                                       "assertVisible":  {
+                                                                             "id":  "slotQ_keybind",
+                                                                             "expected":  true
+                                                                         },
+                                                       "step":  "keybind visible"
+                                                   }
+                                               ]
+                                }
+                 },
+    "name":  "WidgetMissingKeybindTest",
+    "apiVersion":  "0.2",
+    "kind":  "Test"
+}
+

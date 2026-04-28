@@ -1,0 +1,7 @@
+﻿{
+    "caseId":  "assertion_failed/case-03-style-opacity",
+    "category":  "ASSERTION_FAILED",
+    "targetFile":  "broken-spec.json",
+    "title":  "Fix cooldown opacity style"
+}
+

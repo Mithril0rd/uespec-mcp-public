@@ -1,0 +1,30 @@
+You are fixing a UISpec JSON file that failed a state assertion.
+
+## Failure
+- Test step: {{ test_step }}
+- Failure message: {{ failure_message }}
+- Expected state: {{ expected_value }}
+- Actual state: {{ actual_value }}
+
+## Assertion reference sites
+```json
+{{ assertion_reference_sites }}
+```
+
+## State machine
+```json
+{{ state_machine_context }}
+```
+
+## ViewModel context
+```json
+{{ view_model_context }}
+```
+
+## Your Task
+Generate a JSON Patch (RFC 6902) that fixes this specific state assertion failure.
+
+Rules:
+1. Minimize the change. Do not rewrite the whole spec.
+2. Prefer fixing transition conditions or related view-model wiring before changing the test.
+3. Output ONLY the JSON Patch array, no prose.

@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "summary": {
+    "total": 1,
+    "pass": 1,
+    "fail": 0,
+    "skip": 0
+  },
+  "errors": [],
+  "failureReport": {
+    "summary": {
+      "total": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0
+    },
+    "failures": []
+  }
+}
+

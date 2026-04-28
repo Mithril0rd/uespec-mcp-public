@@ -1,0 +1,25 @@
+{
+  "testSpec": {
+    "target": "CompileUnknownSignalHUD",
+    "phases": {
+      "act": [
+        {
+          "emitSignal": "onSkillUsed",
+          "step": "emit skill signal"
+        }
+      ],
+      "assert": [
+        {
+          "waitForState": {
+            "state": "Cooldown",
+            "timeout": 1
+          },
+          "step": "wait state"
+        }
+      ]
+    }
+  },
+  "name": "CompileUnknownSignalTest",
+  "apiVersion": "0.2",
+  "kind": "Test"
+}

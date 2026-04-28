@@ -1,0 +1,7 @@
+﻿{
+    "caseId":  "timeout/case-03-add-missing-expected-state",
+    "category":  "TIMEOUT",
+    "targetFile":  "broken-spec.json",
+    "title":  "Add missing cooldown state and transition"
+}
+

@@ -1,0 +1,17 @@
+{
+  "apiVersion": "0.2",
+  "kind": "Test",
+  "name": "Round7ScreenshotSmoke",
+  "testSpec": {
+    "target": "GeneratedFromScreenshot",
+    "phases": {
+      "assert": [
+        {
+          "op": "assertVisible",
+          "target": "rootPanel"
+        }
+      ]
+    }
+  }
+}
+

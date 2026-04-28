@@ -1,0 +1,53 @@
+{
+  "suite": "round7-screenshot-to-uispec",
+  "version": 1,
+  "defaultTestSpecPath": "evals/screenshot_cases/test-specs/smoke-visible-root.json",
+  "cases": [
+    {
+      "caseId": "screenshot/combat-hud",
+      "title": "Combat HUD",
+      "imagePath": "evals/screenshot_cases/screenshots/combat-hud.png",
+      "targetKind": "HUD",
+      "visualPrompt": "ARPG combat HUD with player health, resource bar, skill bar, cooldowns, and buff icons.",
+      "expectedComponents": ["HealthBar", "ResourceBar", "SkillSlot", "StatusEffectIcon"],
+      "scoringFocus": ["layout structure", "component reuse", "health/resource colors", "skill slot labels"]
+    },
+    {
+      "caseId": "screenshot/inventory-panel",
+      "title": "Inventory Panel",
+      "imagePath": "evals/screenshot_cases/screenshots/inventory-panel.png",
+      "targetKind": "Menu",
+      "visualPrompt": "ARPG inventory screen with item grid, selected item tooltip, currency, and equipment summary.",
+      "expectedComponents": ["ItemSlot", "ItemTooltip", "EquipmentPanel"],
+      "scoringFocus": ["grid layout", "tooltip hierarchy", "item rarity styling", "panel grouping"]
+    },
+    {
+      "caseId": "screenshot/quest-tracker",
+      "title": "Quest Tracker",
+      "imagePath": "evals/screenshot_cases/screenshots/quest-tracker.png",
+      "targetKind": "HUD",
+      "visualPrompt": "In-game quest tracker with active objectives, progress counts, and minimap markers.",
+      "expectedComponents": ["QuestEntry", "MinimapMarker"],
+      "scoringFocus": ["text hierarchy", "progress state", "marker reuse", "compact HUD placement"]
+    },
+    {
+      "caseId": "screenshot/nameplate-cluster",
+      "title": "Nameplate Cluster",
+      "imagePath": "evals/screenshot_cases/screenshots/nameplate-cluster.png",
+      "targetKind": "WorldSpace",
+      "visualPrompt": "World-space enemy and party nameplates with level, health bars, status effects, and target highlight.",
+      "expectedComponents": ["PlayerNamePlate", "HealthBar", "StatusEffectIcon"],
+      "scoringFocus": ["world-space sizing", "readability", "target highlight", "status effect placement"]
+    },
+    {
+      "caseId": "screenshot/chat-and-social",
+      "title": "Chat And Social HUD",
+      "imagePath": "evals/screenshot_cases/screenshots/chat-and-social.png",
+      "targetKind": "HUD",
+      "visualPrompt": "MMO chat panel with channel tabs, timestamped chat lines, player names, and notification badges.",
+      "expectedComponents": ["ChatLine", "PlayerNamePlate"],
+      "scoringFocus": ["chat line repetition", "text colors", "channel tabs", "notification affordance"]
+    }
+  ]
+}
+

@@ -1,0 +1,47 @@
+You are fixing a UISpec JSON file that timed out while waiting for a widget state transition.
+
+## Failure
+- Timeout kind: {{ timeout_kind }}
+- Test step: {{ test_step }}
+- Failure message: {{ failure_message }}
+- Expected state: {{ expected_value }}
+- Actual state: {{ actual_value }}
+- Primary diagnosis: {{ primary_diagnosis }}
+
+## Wait step reference sites
+```json
+{{ wait_reference_sites }}
+```
+
+## State context
+```json
+{{ state_context }}
+```
+
+## Test setup context
+### Parameters
+```json
+{{ parameter_context }}
+```
+
+### Arrange phase
+```json
+{{ arrange_context }}
+```
+
+## Relevant support surface
+```json
+{{ relevant_support_surface }}
+```
+
+## Your Task
+Generate a JSON Patch (RFC 6902) that fixes this specific TIMEOUT failure.
+
+Rules:
+1. Minimize the change. Do not rewrite the whole spec.
+2. Prefer fixing transition conditions or missing transition paths before changing the test timeout.
+3. Edit the UISpec only. Do not modify testSpec phases, wait steps, or timeout values.
+4. Prefer adjusting arrange or vmState only when those steps already exist inside the same target document.
+5. UESpec state transitions use the `when` field inside `stateMachine.states[].transitions[]`. Do not invent `trigger`, `waitSteps`, or other non-UESpec keys.
+6. When primary diagnosis is `missing_expected_state`, prefer adding the expected state object to `stateMachine.states` before changing unrelated transition fields.
+7. Output ONLY the JSON Patch array, no prose.

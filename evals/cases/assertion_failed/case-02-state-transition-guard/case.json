@@ -1,0 +1,6 @@
+{
+  "caseId": "assertion_failed/case-02-state-transition-guard",
+  "category": "ASSERTION_FAILED",
+  "targetFile": "broken-spec.json",
+  "title": "Fix cooldown signal transition"
+}

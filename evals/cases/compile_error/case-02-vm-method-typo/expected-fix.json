@@ -1,0 +1,30 @@
+﻿{
+    "root":  {
+                 "id":  "rootPanel",
+                 "type":  "CanvasPanel",
+                 "children":  [
+                                  {
+                                      "actions":  [
+                                                      {
+                                                          "on":  "Clicked",
+                                                          "do":  "vm.UseSkill(0)"
+                                                      }
+                                                  ],
+                                      "id":  "slotQ",
+                                      "type":  "Button"
+                                  }
+                              ]
+             },
+    "name":  "CompileVmTypoHUD",
+    "apiVersion":  "0.2",
+    "viewModel":  {
+                      "class":  "VM_SkillBar",
+                      "methods":  [
+                                      {
+                                          "name":  "UseSkill"
+                                      }
+                                  ]
+                  },
+    "kind":  "HUD"
+}
+

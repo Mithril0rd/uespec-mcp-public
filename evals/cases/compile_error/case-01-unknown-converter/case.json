@@ -1,0 +1,7 @@
+﻿{
+    "caseId":  "compile_error/case-01-unknown-converter",
+    "category":  "COMPILE_ERROR",
+    "targetFile":  "broken-spec.json",
+    "title":  "Unknown visibility converter"
+}
+

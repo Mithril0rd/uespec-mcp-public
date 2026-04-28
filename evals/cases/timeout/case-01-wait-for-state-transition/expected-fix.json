@@ -1,0 +1,26 @@
+{
+  "apiVersion": "0.2",
+  "kind": "HUD",
+  "name": "TimeoutStateHUD",
+  "stateMachine": {
+    "initial": "Normal",
+    "states": [
+      {
+        "name": "Normal",
+        "transitions": [
+          {
+            "to": "Cooldown",
+            "when": "onSkillUsed"
+          }
+        ]
+      },
+      {
+        "name": "Cooldown"
+      }
+    ]
+  },
+  "root": {
+    "id": "rootPanel",
+    "type": "CanvasPanel"
+  }
+}

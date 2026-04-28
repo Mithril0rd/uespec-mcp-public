@@ -1,0 +1,16 @@
+{
+  "testSpec": {
+    "target": "CompileVmTypoHUD",
+    "phases": {
+      "act": [
+        {
+          "click": "slotQ",
+          "step": "click slot"
+        }
+      ]
+    }
+  },
+  "name": "CompileVmTypoTest",
+  "apiVersion": "0.2",
+  "kind": "Test"
+}

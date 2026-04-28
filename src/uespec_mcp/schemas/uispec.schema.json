@@ -1,0 +1,424 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://uespec.dev/schema/uispec.schema.json",
+  "title": "UISpec",
+  "type": "object",
+  "required": ["apiVersion", "kind", "name"],
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "pattern": "^0\\.[0-9]+$"
+    },
+    "kind": {
+      "type": "string",
+      "enum": ["HUD", "Menu", "Popup", "Modal", "Debug", "WorldSpace", "Component", "Test"]
+    },
+    "name": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Za-z0-9_]*$"
+    },
+    "description": {
+      "type": "string"
+    },
+    "extends": {
+      "type": "string"
+    },
+    "resolutions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["1280x720", "1920x1080", "2560x1440", "3840x2160"]
+      }
+    },
+    "viewModel": {
+      "$ref": "#/$defs/viewModel"
+    },
+    "styleTokens": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/styleValue"
+      }
+    },
+    "stateMachine": {
+      "$ref": "#/$defs/stateMachine"
+    },
+    "root": {
+      "$ref": "#/$defs/widget"
+    },
+    "testSpec": {
+      "$ref": "#/$defs/testSpec"
+    },
+    "deletions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "author": { "type": "string" },
+        "generatedBy": { "type": "string" },
+        "generatedAt": { "type": "string", "format": "date-time" },
+        "sourcePrompt": { "type": "string" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "kind": { "const": "Test" }
+        },
+        "required": ["kind"]
+      },
+      "then": {
+        "required": ["testSpec"]
+      },
+      "else": {
+        "required": ["root"]
+      }
+    }
+  ],
+  "$defs": {
+    "widget": {
+      "type": "object",
+      "required": ["type", "id"],
+      "properties": {
+        "apiVersion": { "type": "string" },
+        "type": { "type": "string" },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9_]*$"
+        },
+        "slot": {
+          "$ref": "#/$defs/slot"
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/styleValue"
+          }
+        },
+        "content": {
+          "oneOf": [
+            { "type": "string" },
+            { "$ref": "#/$defs/bindingExpr" }
+          ]
+        },
+        "visibility": {
+          "oneOf": [
+            {
+              "type": "string",
+              "enum": ["Visible", "Hidden", "Collapsed", "HitTestInvisible", "SelfHitTestInvisible"]
+            },
+            { "$ref": "#/$defs/bindingExpr" }
+          ]
+        },
+        "enabled": {
+          "oneOf": [
+            { "type": "boolean" },
+            { "$ref": "#/$defs/bindingExpr" }
+          ]
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/widget"
+          }
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/action"
+          }
+        },
+        "stateBindings": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/$defs/styleValue"
+            }
+          }
+        },
+        "navigation": {
+          "type": "object",
+          "properties": {
+            "up": { "type": "string" },
+            "down": { "type": "string" },
+            "left": { "type": "string" },
+            "right": { "type": "string" },
+            "focusable": { "type": "boolean" }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": true
+    },
+    "slot": {
+      "type": "object",
+      "properties": {
+        "anchors": { "type": "string" },
+        "offset": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 2,
+          "maxItems": 4
+        },
+        "size": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "alignment": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "padding": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "fill": { "type": "number" },
+        "hAlign": { "type": "string" },
+        "vAlign": { "type": "string" },
+        "zOrder": { "type": "integer" },
+        "row": { "type": "integer" },
+        "column": { "type": "integer" }
+      },
+      "additionalProperties": true
+    },
+    "styleValue": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "number" },
+        { "type": "boolean" },
+        { "type": "array" },
+        { "type": "object" }
+      ]
+    },
+    "bindingExpr": {
+      "type": "object",
+      "required": ["bind"],
+      "properties": {
+        "bind": { "type": "string" },
+        "convert": { "type": "string" },
+        "fallback": {},
+        "oneTime": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "viewModel": {
+      "type": "object",
+      "required": ["class"],
+      "properties": {
+        "class": { "type": "string" },
+        "scope": {
+          "type": "string",
+          "enum": ["Transient", "PlayerState", "GameInstance", "Subsystem"]
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/viewModelField"
+          }
+        },
+        "methods": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/viewModelMethod"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "viewModelField": {
+      "type": "object",
+      "required": ["name", "type"],
+      "properties": {
+        "name": { "type": "string" },
+        "type": { "type": "string" },
+        "default": {},
+        "notify": { "type": "boolean" }
+      },
+      "additionalProperties": true
+    },
+    "viewModelMethod": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string" },
+        "pure": { "type": "boolean" },
+        "params": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/viewModelMethodParam"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "viewModelMethodParam": {
+      "type": "object",
+      "required": ["name", "type"],
+      "properties": {
+        "name": { "type": "string" },
+        "type": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "stateMachine": {
+      "type": "object",
+      "required": ["initial", "states"],
+      "properties": {
+        "initial": { "type": "string" },
+        "states": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/stateDefinition"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "stateDefinition": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string" },
+        "onEnter": { "type": "string" },
+        "onExit": { "type": "string" },
+        "transitions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/stateTransition"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "stateTransition": {
+      "type": "object",
+      "required": ["to", "when"],
+      "properties": {
+        "to": { "type": "string" },
+        "when": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "action": {
+      "type": "object",
+      "required": ["on", "do"],
+      "properties": {
+        "on": { "type": "string" },
+        "do": {
+          "oneOf": [
+            { "type": "string" },
+            { "$ref": "#/$defs/actionBlock" }
+          ]
+        },
+        "guard": { "type": "string" },
+        "cooldown": { "type": "number" },
+        "sound": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "actionBlock": {
+      "type": "object",
+      "properties": {
+        "openLayer": { "type": "string" },
+        "closeLayer": {
+          "oneOf": [
+            { "type": "boolean" },
+            { "type": "string" }
+          ]
+        },
+        "setState": { "type": "string" },
+        "callVM": { "type": "string" },
+        "playAnim": { "type": "string" },
+        "emitSignal": { "type": "string" }
+      },
+      "minProperties": 1,
+      "additionalProperties": false
+    },
+    "testSpec": {
+      "type": "object",
+      "required": ["target", "phases"],
+      "properties": {
+        "target": { "type": "string" },
+        "timeout": {
+          "type": "object",
+          "properties": {
+            "step": { "type": "number" },
+            "phase": { "type": "number" },
+            "total": { "type": "number" }
+          },
+          "additionalProperties": true
+        },
+        "parameters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/testParameter"
+          }
+        },
+        "phases": {
+          "$ref": "#/$defs/testPhases"
+        }
+      },
+      "additionalProperties": true
+    },
+    "testParameter": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string" },
+        "vmState": { "type": "object" }
+      },
+      "additionalProperties": true
+    },
+    "testPhases": {
+      "type": "object",
+      "properties": {
+        "assume": { "$ref": "#/$defs/testSteps" },
+        "arrange": { "$ref": "#/$defs/testSteps" },
+        "act": { "$ref": "#/$defs/testSteps" },
+        "assert": { "$ref": "#/$defs/testSteps" },
+        "cleanup": { "$ref": "#/$defs/testSteps" }
+      },
+      "additionalProperties": false
+    },
+    "testSteps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/testStep"
+      }
+    },
+    "testStep": {
+      "type": "object",
+      "required": ["step"],
+      "properties": {
+        "step": { "type": "string" },
+        "click": { "type": "string" },
+        "hover": { "type": "string" },
+        "focus": { "type": "string" },
+        "navigateKey": { "type": "string" },
+        "setVMField": { "type": "object" },
+        "waitForVisible": { "type": "object" },
+        "assertVisible": { "type": "object" },
+        "assertText": { "type": "object" },
+        "assertStyle": { "type": "object" },
+        "assertState": { "type": "object" },
+        "assertFocus": { "type": "object" },
+        "waitForState": { "type": "object" },
+        "screenshot": { "type": "object" }
+      },
+      "additionalProperties": true
+    }
+  }
+}

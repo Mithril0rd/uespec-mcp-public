@@ -1,0 +1,20 @@
+﻿{
+    "testSpec":  {
+                     "target":  "CompileUnknownConverterHUD",
+                     "phases":  {
+                                    "assert":  [
+                                                   {
+                                                       "assertVisible":  {
+                                                                             "id":  "auraBadge",
+                                                                             "expected":  true
+                                                                         },
+                                                       "step":  "badge appears"
+                                                   }
+                                               ]
+                                }
+                 },
+    "name":  "CompileUnknownConverterTest",
+    "apiVersion":  "0.2",
+    "kind":  "Test"
+}
+

@@ -1,0 +1,7 @@
+﻿{
+    "caseId":  "timeout/case-01-wait-for-state-transition",
+    "category":  "TIMEOUT",
+    "targetFile":  "broken-spec.json",
+    "title":  "Fix timeout state transition guard"
+}
+

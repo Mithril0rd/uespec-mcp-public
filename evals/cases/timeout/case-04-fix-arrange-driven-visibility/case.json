@@ -1,0 +1,6 @@
+{
+  "caseId": "timeout/case-04-fix-arrange-driven-visibility",
+  "category": "TIMEOUT",
+  "targetFile": "broken-spec.json",
+  "title": "Fix hidden ready badge"
+}

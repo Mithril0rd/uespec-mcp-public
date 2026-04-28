@@ -1,0 +1,7 @@
+﻿{
+    "caseId":  "compile_error/case-02-vm-method-typo",
+    "category":  "COMPILE_ERROR",
+    "targetFile":  "broken-spec.json",
+    "title":  "VM method typo in click action"
+}
+

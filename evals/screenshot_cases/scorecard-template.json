@@ -1,0 +1,16 @@
+{
+  "caseId": "",
+  "imagePath": "",
+  "generatedSpecPath": "",
+  "autofixStatus": "",
+  "humanScore": "usable | needs_small_edit | not_usable",
+  "scores": {
+    "compilesAndSmokeTestPasses": false,
+    "layoutMatchesIntent": 0,
+    "componentReuse": 0,
+    "textAndColorAccuracy": 0,
+    "manualEditMinutesEstimate": 0
+  },
+  "notes": ""
+}
+

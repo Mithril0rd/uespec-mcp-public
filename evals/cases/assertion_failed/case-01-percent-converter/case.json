@@ -1,0 +1,6 @@
+{
+  "caseId": "assertion_failed/case-01-percent-converter",
+  "category": "ASSERTION_FAILED",
+  "targetFile": "broken-spec.json",
+  "title": "Fix cooldown percent text"
+}

@@ -1,0 +1,19 @@
+{
+  "apiVersion": "0.2",
+  "kind": "Test",
+  "name": "AssertionVisibilityTest",
+  "testSpec": {
+    "target": "AssertionVisibilityHUD",
+    "phases": {
+      "assert": [
+        {
+          "step": "badge visible",
+          "assertVisible": {
+            "id": "cooldownBadge",
+            "expected": true
+          }
+        }
+      ]
+    }
+  }
+}
