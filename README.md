@@ -1,5 +1,7 @@
 # UESpec-Mcp
 
+[![CI](https://github.com/Mithril0rd/uespec-mcp-public/actions/workflows/ci.yml/badge.svg)](https://github.com/Mithril0rd/uespec-mcp-public/actions/workflows/ci.yml)
+
 Python MCP server for driving the UESpec Unreal plugin from AI coding agents.
 
 UESpec-Mcp connects spec-driven UMG generation, Unreal commandlets, automated UI tests, and LLM-based repair loops. The main use case is: generate or edit a UISpec JSON document, compile it into a Widget Blueprint through Unreal, run a UESpec test spec, and let an LLM propose JSON Patch fixes when validation, compile, or test steps fail.
